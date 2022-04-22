@@ -1,4 +1,7 @@
 buildscript {
+    ext.library_group = "com.github.marcin-adamczewski"
+    ext.version_name = "5.13.1"
+
     repositories {
         mavenCentral()
         gradlePluginPortal()
