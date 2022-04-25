@@ -5,6 +5,7 @@ apply plugin: 'jacoco'
 apply plugin: 'com.github.maiflai.scalatest'
 apply plugin: 'scalafmt'
 //apply plugin: "com.vanniktech.maven.publish"
+apply plugin: 'maven-publish'
 
 repositories {
     mavenCentral()
@@ -26,5 +27,21 @@ dependencies {
 sourceSets {
     test {
         output.resourcesDir = "build/classes/test/resources"
+    }
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                // You can then customize attributes of the publication as shown below.
+                groupId = "$library_group"
+                artifactId = "shot-android"
+                version = "$version_name"
+
+                from components.java
+            }
+        }
     }
 }

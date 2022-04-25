@@ -48,6 +48,8 @@ afterEvaluate {
                 groupId = "$library_group"
                 artifactId = "shot"
                 version = "$version_name"
+
+                from components.java
             }
         }
     }
