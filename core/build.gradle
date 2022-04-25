@@ -37,7 +37,7 @@ afterEvaluate {
             release(MavenPublication) {
                 // You can then customize attributes of the publication as shown below.
                 groupId = "$library_group"
-                artifactId = "shot-android"
+                artifactId = "core"
                 version = "$version_name"
 
                 from components.java
